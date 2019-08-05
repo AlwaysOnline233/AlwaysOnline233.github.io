@@ -62,6 +62,99 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/05/正则表达式/" class="article-date">
+  <time datetime="2019-08-05T03:18:24.000Z" itemprop="datePublished">2019-08-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/05/正则表达式/">正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>### </p>
+<p>python自1.5以后增加了re模块，提供了正则表达式模式</p>
+<p>re模块使python语言拥有了全部的正则表达式功能</p>
+<h6 id="re-match函数"><a href="#re-match函数" class="headerlink" title="re.match函数"></a>re.match函数</h6><blockquote>
+<p>原型：match(pattern, string, flags=0)</p>
+</blockquote>
+<blockquote>
+<p>参数：</p>
+<blockquote>
+<p>pattern 匹配的正则表达式</p>
+<p>string 要匹配额字符串</p>
+<p>flags 标志位，用于控制正则表达式的匹配方式，值如下：</p>
+<blockquote>
+<p>re.I 忽略大小写</p>
+<p>re.L 做本地识别</p>
+<p>re.M 多行匹配，影响^和$</p>
+<p>re.S 是匹配包括换行符在内的所有字符</p>
+<p>re.U 根据Unicode字符集解析字符，影响\w \W \b \B</p>
+<p>re.X 以更灵活的格式理解正则表达式</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>功能：尝试从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的话，返回None</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">print(re.match(<span class="string">"www"</span>,<span class="string">"www.baidu.com"</span>))</span><br><span class="line">print(re.match(<span class="string">"www"</span>,<span class="string">"ww.baidu.com"</span>))</span><br><span class="line">print(re.match(<span class="string">"www"</span>,<span class="string">"baidu.www.com"</span>))</span><br><span class="line">print(re.match(<span class="string">"www"</span>,<span class="string">"Www.baidu.com"</span>,flags=re.I))</span><br></pre></td></tr></table></figure>
+
+<h6 id="re-search函数"><a href="#re-search函数" class="headerlink" title="re.search函数"></a>re.search函数</h6><blockquote>
+<p>原型：search(pattern, string, flags=0)</p>
+<p>参数：</p>
+<blockquote>
+<p>pattern 匹配的正则表达式</p>
+<p>string 要匹配额字符串</p>
+<p>flags 标志位，用于控制正则表达式的匹配方式</p>
+</blockquote>
+<p>功能：扫描整个字符串，返回第一个成功的匹配</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">print(re.search(<span class="string">"www"</span>,<span class="string">"baidu.www.baidu.www.com"</span>))</span><br></pre></td></tr></table></figure>
+
+<h6 id="re-findall函数"><a href="#re-findall函数" class="headerlink" title="re.findall函数"></a>re.findall函数</h6><blockquote>
+<p>原型：findall(pattern, string, flags=0)</p>
+</blockquote>
+<blockquote>
+<p>参数：</p>
+<blockquote>
+<p>pattern 匹配的正则表达式</p>
+<p>string 要匹配额字符串</p>
+<p>flags 标志位，用于控制正则表达式的匹配方式</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>功能：扫描整个字符串，返回结果列表</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">print(re.search(<span class="string">"www"</span>,<span class="string">"baidu.www.baidu.www.com"</span>))</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://AlwaysOnline233.com/2019/08/05/正则表达式/" data-id="cjyxudeo6000060vuxqi5l9hq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/04/Python/" class="article-date">
@@ -209,9 +302,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -228,6 +335,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/08/05/正则表达式/">正则表达式</a>
+          </li>
         
           <li>
             <a href="/2019/08/04/Python/">Python</a>
