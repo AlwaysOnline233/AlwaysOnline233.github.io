@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Shell | AlwaysOnlineの部落格</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="shellshell是一个命令行解释器，它为用户提供一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用shell来启动，挂起，停止甚至是编写一些程序。      shell还是一个功能强大的编程语言，易编写，易调试，灵活性强。     shell是解释执行的脚本语言，在shell中可以直接调用Linux系统命令。 脚本执行方式： echo  [选项]  [输出内容] 选项：-e">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shell">
+<meta property="og:url" content="http://AlwaysOnline233.com/2019/08/05/Shell/index.html">
+<meta property="og:site_name" content="AlwaysOnlineの部落格">
+<meta property="og:description" content="shellshell是一个命令行解释器，它为用户提供一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用shell来启动，挂起，停止甚至是编写一些程序。      shell还是一个功能强大的编程语言，易编写，易调试，灵活性强。     shell是解释执行的脚本语言，在shell中可以直接调用Linux系统命令。 脚本执行方式： echo  [选项]  [输出内容] 选项：-e">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-05T08:20:57.371Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shell">
+<meta name="twitter:description" content="shellshell是一个命令行解释器，它为用户提供一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用shell来启动，挂起，停止甚至是编写一些程序。      shell还是一个功能强大的编程语言，易编写，易调试，灵活性强。     shell是解释执行的脚本语言，在shell中可以直接调用Linux系统命令。 脚本执行方式： echo  [选项]  [输出内容] 选项：-e">
+  
+    <link rel="alternate" href="/atom.xml" title="AlwaysOnlineの部落格" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AlwaysOnlineの部落格</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://AlwaysOnline233.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Shell" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/05/Shell/" class="article-date">
+  <time datetime="2019-08-05T07:19:54.000Z" itemprop="datePublished">2019-08-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Shell
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h3><p>shell是一个命令行解释器，它为用户提供一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用shell来启动，挂起，停止甚至是编写一些程序。     </p>
+<p>shell还是一个功能强大的编程语言，易编写，易调试，灵活性强。    </p>
+<p>shell是解释执行的脚本语言，在shell中可以直接调用Linux系统命令。</p>
+<p>脚本执行方式：</p>
+<p>echo  [选项]  [输出内容]</p>
+<pre><code>选项：-e  支持反斜线控制的字符串</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># !/bin/bash</span></span><br><span class="line"><span class="comment"># The first program</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hello world "</span></span><br></pre></td></tr></table></figure>
+
+<p>脚本执行：</p>
+<ul>
+<li><p>赋予执行权限，直接运行</p>
+</li>
+<li><p>通过Bash调用执行</p>
+</li>
+<li></li>
+</ul>
+<h3 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h3><p>alias                                # 查看系统中所有的命令别名</p>
+<p>alias  别名=‘原命令’       # 设定命令别名</p>
+<p>vi  ~/.bashrc                 # 写入环境变量配置文件 （使别名永久生效）</p>
+<p>unalias  别名                # 删除别名</p>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><p>ctrl + c    强制终止当前命令</p>
+<p>ctrl + l    清屏 </p>
+<p>ctrl + a    光标移动到命令行首</p>
+<p>ctrl + e    光标移动到命令行尾</p>
+<p>ctrl + u    从光标所在位置删除到行首</p>
+<p>ctrl + z    把命令放入后台</p>
+<p>ctrl + r    在历史命令中搜索</p>
+<h3 id="历史命令"><a href="#历史命令" class="headerlink" title="历史命令"></a>历史命令</h3><p>history  [选项] [历史命令保存文件]</p>
+<p>选项：</p>
+<pre><code>-c  清空历史命令
+
+-w  把缓存中历史命令写入历史命令保存文件 ~/.bash_history</code></pre><p>历史命令的调用：</p>
+<ul>
+<li><p>上下箭头调用以前的历史命令</p>
+</li>
+<li><p>“!n”  重复执行第n条历史命令</p>
+</li>
+<li><p>“!!”  重复执行上一条历史命令</p>
+</li>
+<li><p>“!字符串”  重复执行最后一条以该字符串开头的命令</p>
+</li>
+</ul>
+<h3 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h3><p>类型     |     符号    |     作用</p>
+<p>   –       |     –         |     –</p>
+<p>标准输出重定向：   </p>
+<pre><code>命令 &gt; 文件                以覆盖的方式，把命令的正确输出输出到指定的文件或设备中
+
+命令 &gt;&gt; 文件              以追加的方式，把命令的正确输出输出到指定的文件或设备中</code></pre><p>标准错误输出重定向：</p>
+<pre><code>错误命令2&gt;文件        以覆盖的方式，把命令的错误输出输出到指定的文件或设备中
+
+错误命令2&gt;&gt;文件      以追加的方式，把命令的错误输出输出到指定的文件或设备中</code></pre><p>正确输出和错误输出同时保存：</p>
+<pre><code>命令 &gt; 文件2 &gt; &amp;1    以覆盖的方式，把正确和错误输出都保存到同一文件或设备中
+
+命令 &gt;&gt; 文件2 &gt; &amp;1  以追加的方式，把正确和错误输出都保存到同一文件或设备中
+
+命令 &amp;&gt; 文件             以覆盖的方式，把正确和错误输出都保存到同一文件或设备中
+
+命令 &amp;&gt;&gt; 文件           以追加的方式，把正确和错误输出都保存到同一文件或设备中
+
+命令 &gt;&gt;文件1 2&gt;&gt;文件2         把正确输出追加到文件1中，错误输出追加到文件2中</code></pre><p>attention：正确输出有空格，错误输出没有</p>
+<h3 id="输入重定向"><a href="#输入重定向" class="headerlink" title="输入重定向"></a>输入重定向</h3><p>wc  [选项]  [文件名]</p>
+<p>选项：</p>
+<pre><code>-c 统计字节数
+
+ -w 统计单词数 
+
+-l  统计行数</code></pre><p>命令 &lt; 文件           把文件作为命令的输入</p>
+<p>命令&lt;&lt;标识符       标识符把标识符之间的内容作为命令的输入</p>
+<h3 id="多命令执行"><a href="#多命令执行" class="headerlink" title="多命令执行"></a>多命令执行</h3><p>;             命令1 ; 命令2                    多个命令顺序执行</p>
+<p>&amp;&amp;        命令1 &amp;&amp; 命令2                逻辑与</p>
+<p>### </p>
+<h3 id="管道符"><a href="#管道符" class="headerlink" title="管道符"></a>管道符</h3><p>命令1  |  命令2                             命令1的正确输出作为命令2的操作对象</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://AlwaysOnline233.com/2019/08/05/Shell/" data-id="cjyy4p74h0004q4vuif76pt8u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/05/Linux挂载命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux挂载命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/05/Shell/">Shell</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/05/Linux挂载命令/">Linux挂载命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/05/正则表达式/">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/04/Python/">Python</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/02/Linux/">Linux基本命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 AlwaysOnline233<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
