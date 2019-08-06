@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>磁盘管理 | AlwaysOnlineの部落格</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="df 查看磁盘分区使用状况 -l    仅显示本地磁盘（默认）  -a    显示所有文件系统的磁盘使用状况  -h    以1024进制显示磁盘容量  -H    以1000进制显示磁盘容量  -T    显示磁盘分区类型  -t    显示指定类型文件系统的磁盘分区  -x    不显示指定类型文件系统的磁盘分区   du 统计磁盘上的文件大小 -b     以byte为单位统计文件  -k">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="磁盘管理">
+<meta property="og:url" content="http://AlwaysOnline233.com/2019/08/06/磁盘管理/index.html">
+<meta property="og:site_name" content="AlwaysOnlineの部落格">
+<meta property="og:description" content="df 查看磁盘分区使用状况 -l    仅显示本地磁盘（默认）  -a    显示所有文件系统的磁盘使用状况  -h    以1024进制显示磁盘容量  -H    以1000进制显示磁盘容量  -T    显示磁盘分区类型  -t    显示指定类型文件系统的磁盘分区  -x    不显示指定类型文件系统的磁盘分区   du 统计磁盘上的文件大小 -b     以byte为单位统计文件  -k">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-06T07:18:20.049Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="磁盘管理">
+<meta name="twitter:description" content="df 查看磁盘分区使用状况 -l    仅显示本地磁盘（默认）  -a    显示所有文件系统的磁盘使用状况  -h    以1024进制显示磁盘容量  -H    以1000进制显示磁盘容量  -T    显示磁盘分区类型  -t    显示指定类型文件系统的磁盘分区  -x    不显示指定类型文件系统的磁盘分区   du 统计磁盘上的文件大小 -b     以byte为单位统计文件  -k">
+  
+    <link rel="alternate" href="/atom.xml" title="AlwaysOnlineの部落格" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AlwaysOnlineの部落格</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://AlwaysOnline233.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-磁盘管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/06/磁盘管理/" class="article-date">
+  <time datetime="2019-08-06T06:26:17.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      磁盘管理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="df-查看磁盘分区使用状况"><a href="#df-查看磁盘分区使用状况" class="headerlink" title="df 查看磁盘分区使用状况"></a>df 查看磁盘分区使用状况</h3><ul>
+<li><p>-l    仅显示本地磁盘（默认）</p>
+</li>
+<li><p>-a    显示所有文件系统的磁盘使用状况</p>
+</li>
+<li><p>-h    以1024进制显示磁盘容量</p>
+</li>
+<li><p>-H    以1000进制显示磁盘容量</p>
+</li>
+<li><p>-T    显示磁盘分区类型</p>
+</li>
+<li><p>-t    显示指定类型文件系统的磁盘分区</p>
+</li>
+<li><p>-x    不显示指定类型文件系统的磁盘分区</p>
+</li>
+</ul>
+<h3 id="du-统计磁盘上的文件大小"><a href="#du-统计磁盘上的文件大小" class="headerlink" title="du 统计磁盘上的文件大小"></a>du 统计磁盘上的文件大小</h3><ul>
+<li><p>-b     以byte为单位统计文件</p>
+</li>
+<li><p>-k     以KB为单位统计文件</p>
+</li>
+<li><p>-m    以MB为单位统计文件</p>
+</li>
+<li><p>-h     以1024进制显示磁盘容量</p>
+</li>
+<li><p>-H    以1000进制显示磁盘容量</p>
+</li>
+<li><p>-s    指定统计目标</p>
+</li>
+</ul>
+<h3 id="MBR分区"><a href="#MBR分区" class="headerlink" title="MBR分区"></a>MBR分区</h3><ul>
+<li><p>fdisk  -l            列出当前分区表</p>
+</li>
+<li><p>fdisk  路径      进入分区模式</p>
+</li>
+<li><p>m                     查看命令帮助信息</p>
+</li>
+<li><p>n                      增加新分区</p>
+</li>
+</ul>
+<h3 id="GPT分区"><a href="#GPT分区" class="headerlink" title="GPT分区"></a>GPT分区</h3><ul>
+<li><p>parted           启动分区工具</p>
+</li>
+<li><p>help                帮助信息</p>
+</li>
+<li><p>select             切换目标磁盘</p>
+</li>
+<li><p>mklabel  gpt   指定分区类型       [ mklabel msdos     指定MBR分区 ]</p>
+</li>
+<li><p>print               查看当前硬盘分区详情</p>
+</li>
+<li><p>printall           查看所有硬盘分区详情</p>
+</li>
+<li><p>mkpart           增加新分区</p>
+</li>
+<li><p>rm 分区编号   删除分区</p>
+</li>
+<li><p>quit                 退出分区工具</p>
+</li>
+</ul>
+<h3 id="分区格式化mkfs"><a href="#分区格式化mkfs" class="headerlink" title="分区格式化mkfs"></a>分区格式化mkfs</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> -<span class="keyword">l</span> /dev/sdb*      # 查看sdb磁盘分区再设备目录下的情况</span><br><span class="line">mkfs.ext3 /dev/sdb1  # 把sdb1分区格式化为ext3文件系统</span><br></pre></td></tr></table></figure>
+
+<h3 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h3><p>分区默认挂载目录    /mnt  目录             挂载点必须已存在</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -<span class="keyword">p</span> /mnt/test          # 建立文件夹</span><br><span class="line">mount /dev/sdb1  /mnt/test  # 将sdb1挂载到test文件夹下</span><br><span class="line">umount /mnt/test            # 卸载</span><br></pre></td></tr></table></figure>
+
+<p>umount  挂载点名称       #这样手动卸载的方式不具永久性  </p>
+<p>如果需要自动挂载的话，就要编辑 etc 下的 fstab 配置文件</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> + /etv/fstab/            # 进入文件</span><br><span class="line"># 再文件末尾添加一行配置</span><br><span class="line">/dev/sdb1    /mnt/test   ext3    defaults    <span class="number">0</span>    <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="swap分区"><a href="#swap分区" class="headerlink" title="swap分区"></a>swap分区</h3><ul>
+<li><p>建立一个Linux分区</p>
+</li>
+<li><p>修改分区类型的16进制编码    （82）</p>
+</li>
+<li><p>格式化交换分区</p>
+</li>
+<li><p>启用交换分区</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://AlwaysOnline233.com/2019/08/06/磁盘管理/" data-id="cjyzkn2jc0009dcvui6obeywx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/06/用户管理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          用户管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/05/Shell/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Shell</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/06/用户管理/">用户管理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/06/磁盘管理/">磁盘管理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/05/Shell/">Shell</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/05/Linux挂载命令/">Linux挂载命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/05/正则表达式/">正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 AlwaysOnline233<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

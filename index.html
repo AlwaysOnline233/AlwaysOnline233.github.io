@@ -62,6 +62,183 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-用户管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/06/用户管理/" class="article-date">
+  <time datetime="2019-08-06T07:19:00.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/06/用户管理/">用户管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="用户和用户组概念"><a href="#用户和用户组概念" class="headerlink" title="用户和用户组概念"></a>用户和用户组概念</h3><p>用户：使用操作系统的人</p>
+<p>用户组：具有相同系统权限的一组用户</p>
+<ul>
+<li><p>/etc/group            存储当前系统中所有用户组信息</p>
+</li>
+<li><p>/etc/gshadow      存储当前系统中用户组的密码信息</p>
+</li>
+<li><p>/ect/passwd         存储当前系统中所有用户信息</p>
+</li>
+<li><p>/etc/shadow        存储当前系统中所有用户的密码信息</p>
+</li>
+</ul>
+<h3 id="用户和用户组的基本命令"><a href="#用户和用户组的基本命令" class="headerlink" title="用户和用户组的基本命令"></a>用户和用户组的基本命令</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">groupadd firstname                   # 创建用户组</span><br><span class="line">groupmod -n second firstname         # 修改用户组名称，新再前，原在后</span><br><span class="line">groupmod -g <span class="number">666</span> second               # 修改组编号</span><br><span class="line">groupadd -g <span class="number">111</span> three                # 创建组同时指定编号</span><br><span class="line">groupdel  three                      # 删除组</span><br><span class="line"></span><br><span class="line">useradd -g second jack               # 创建用户</span><br><span class="line"># 创建用户时指定用户个人文件夹,若不指定，系统在自动在home下创建用户同名文件夹</span><br><span class="line">useradd -d /home/rose rose           # 指定个人文件夹</span><br><span class="line">usermod -<span class="keyword">c</span> beautiful rose            # 添加注释</span><br><span class="line">usermod -<span class="keyword">l</span> jhon jack                 # 将用户名jack改为jhon</span><br><span class="line">usermod -g three jhon                # 修改用户组</span><br><span class="line">userdel jhon                         # 删除用户</span><br><span class="line">userdel -r jhon                      # 连带个人文件一同删除</span><br><span class="line">touch /etc/nologin                   # 除root，禁止其他用户登录服务器</span><br></pre></td></tr></table></figure>
+
+<h3 id="用户和用户组的进阶命令"><a href="#用户和用户组的进阶命令" class="headerlink" title="用户和用户组的进阶命令"></a>用户和用户组的进阶命令</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">passwd -<span class="keyword">l</span> jack            # 锁定账户</span><br><span class="line">passwd -<span class="keyword">u</span> jack            # 解锁</span><br><span class="line">passwd -d jack            消除密码，无密码登录</span><br></pre></td></tr></table></figure>
+
+<h6 id="主要组与附属组"><a href="#主要组与附属组" class="headerlink" title="主要组与附属组"></a>主要组与附属组</h6><p>用户可同时属于多个组</p>
+<p>一个主要组，多个附属组</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gpasswd -<span class="keyword">a</span> jack four       # 添加附属组</span><br><span class="line">gpasswd -d jack four       #将用户jack从附属组four中去掉</span><br><span class="line">useradd -g group1 -G group2, group3 jack  </span><br><span class="line"># 创建用户jack属于主要组group1，附属组group2和group3</span><br></pre></td></tr></table></figure>
+
+<h3 id="用户管理其他命令"><a href="#用户管理其他命令" class="headerlink" title="用户管理其他命令"></a>用户管理其他命令</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su username             # 切换用户身份，将当前身份切换到username</span><br><span class="line">whoami                  # 显示当前登录用户名</span><br><span class="line">id jack                 # 显示用户信息</span><br><span class="line">groups jack             # 显示用户所在的所有组</span><br><span class="line">chfn jack               # 设置用户资料</span><br><span class="line">finger jack             # 显示用户相信资料</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://AlwaysOnline233.com/2019/08/06/用户管理/" data-id="cjyzkn2j60008dcvuq5gtfdtm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-磁盘管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/06/磁盘管理/" class="article-date">
+  <time datetime="2019-08-06T06:26:17.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/06/磁盘管理/">磁盘管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="df-查看磁盘分区使用状况"><a href="#df-查看磁盘分区使用状况" class="headerlink" title="df 查看磁盘分区使用状况"></a>df 查看磁盘分区使用状况</h3><ul>
+<li><p>-l    仅显示本地磁盘（默认）</p>
+</li>
+<li><p>-a    显示所有文件系统的磁盘使用状况</p>
+</li>
+<li><p>-h    以1024进制显示磁盘容量</p>
+</li>
+<li><p>-H    以1000进制显示磁盘容量</p>
+</li>
+<li><p>-T    显示磁盘分区类型</p>
+</li>
+<li><p>-t    显示指定类型文件系统的磁盘分区</p>
+</li>
+<li><p>-x    不显示指定类型文件系统的磁盘分区</p>
+</li>
+</ul>
+<h3 id="du-统计磁盘上的文件大小"><a href="#du-统计磁盘上的文件大小" class="headerlink" title="du 统计磁盘上的文件大小"></a>du 统计磁盘上的文件大小</h3><ul>
+<li><p>-b     以byte为单位统计文件</p>
+</li>
+<li><p>-k     以KB为单位统计文件</p>
+</li>
+<li><p>-m    以MB为单位统计文件</p>
+</li>
+<li><p>-h     以1024进制显示磁盘容量</p>
+</li>
+<li><p>-H    以1000进制显示磁盘容量</p>
+</li>
+<li><p>-s    指定统计目标</p>
+</li>
+</ul>
+<h3 id="MBR分区"><a href="#MBR分区" class="headerlink" title="MBR分区"></a>MBR分区</h3><ul>
+<li><p>fdisk  -l            列出当前分区表</p>
+</li>
+<li><p>fdisk  路径      进入分区模式</p>
+</li>
+<li><p>m                     查看命令帮助信息</p>
+</li>
+<li><p>n                      增加新分区</p>
+</li>
+</ul>
+<h3 id="GPT分区"><a href="#GPT分区" class="headerlink" title="GPT分区"></a>GPT分区</h3><ul>
+<li><p>parted           启动分区工具</p>
+</li>
+<li><p>help                帮助信息</p>
+</li>
+<li><p>select             切换目标磁盘</p>
+</li>
+<li><p>mklabel  gpt   指定分区类型       [ mklabel msdos     指定MBR分区 ]</p>
+</li>
+<li><p>print               查看当前硬盘分区详情</p>
+</li>
+<li><p>printall           查看所有硬盘分区详情</p>
+</li>
+<li><p>mkpart           增加新分区</p>
+</li>
+<li><p>rm 分区编号   删除分区</p>
+</li>
+<li><p>quit                 退出分区工具</p>
+</li>
+</ul>
+<h3 id="分区格式化mkfs"><a href="#分区格式化mkfs" class="headerlink" title="分区格式化mkfs"></a>分区格式化mkfs</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> -<span class="keyword">l</span> /dev/sdb*      # 查看sdb磁盘分区再设备目录下的情况</span><br><span class="line">mkfs.ext3 /dev/sdb1  # 把sdb1分区格式化为ext3文件系统</span><br></pre></td></tr></table></figure>
+
+<h3 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h3><p>分区默认挂载目录    /mnt  目录             挂载点必须已存在</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -<span class="keyword">p</span> /mnt/test          # 建立文件夹</span><br><span class="line">mount /dev/sdb1  /mnt/test  # 将sdb1挂载到test文件夹下</span><br><span class="line">umount /mnt/test            # 卸载</span><br></pre></td></tr></table></figure>
+
+<p>umount  挂载点名称       #这样手动卸载的方式不具永久性  </p>
+<p>如果需要自动挂载的话，就要编辑 etc 下的 fstab 配置文件</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> + /etv/fstab/            # 进入文件</span><br><span class="line"># 再文件末尾添加一行配置</span><br><span class="line">/dev/sdb1    /mnt/test   ext3    defaults    <span class="number">0</span>    <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="swap分区"><a href="#swap分区" class="headerlink" title="swap分区"></a>swap分区</h3><ul>
+<li><p>建立一个Linux分区</p>
+</li>
+<li><p>修改分区类型的16进制编码    （82）</p>
+</li>
+<li><p>格式化交换分区</p>
+</li>
+<li><p>启用交换分区</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://AlwaysOnline233.com/2019/08/06/磁盘管理/" data-id="cjyzkn2jc0009dcvui6obeywx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Shell" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/05/Shell/" class="article-date">
@@ -159,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://AlwaysOnline233.com/2019/08/05/Shell/" data-id="cjyy4p74h0004q4vuif76pt8u" class="article-share-link">Share</a>
+      <a data-url="http://AlwaysOnline233.com/2019/08/05/Shell/" data-id="cjyzkn2ig0003dcvugobzg1xf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -213,7 +390,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://AlwaysOnline233.com/2019/08/05/Linux挂载命令/" data-id="cjyy4p7490003q4vucgow7pal" class="article-share-link">Share</a>
+      <a data-url="http://AlwaysOnline233.com/2019/08/05/Linux挂载命令/" data-id="cjyzkn2hy0001dcvuhvrjtdqh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -438,7 +615,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://AlwaysOnline233.com/2019/08/05/正则表达式/" data-id="cjyy4p74v0008q4vuqe8b3bpr" class="article-share-link">Share</a>
+      <a data-url="http://AlwaysOnline233.com/2019/08/05/正则表达式/" data-id="cjyzkn2k5000hdcvuhl15u7l6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -479,7 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://AlwaysOnline233.com/2019/08/04/Python/" data-id="cjyy4p7340000q4vuv22wymsf" class="article-share-link">Share</a>
+      <a data-url="http://AlwaysOnline233.com/2019/08/04/Python/" data-id="cjyzkn2in0004dcvuaaw8fdnw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -597,7 +774,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://AlwaysOnline233.com/2019/08/02/Linux/" data-id="cjyy4p73q0001q4vudgm43lz8" class="article-share-link">Share</a>
+      <a data-url="http://AlwaysOnline233.com/2019/08/02/Linux/" data-id="cjyzkn2ha0000dcvudmo6j5xd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -648,7 +825,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://AlwaysOnline233.com/2019/08/02/hello-world/" data-id="cjyy4p74n0005q4vucd5fotfv" class="article-share-link">Share</a>
+      <a data-url="http://AlwaysOnline233.com/2019/08/02/hello-world/" data-id="cjyzkn2it0005dcvuqthvrfok" class="article-share-link">Share</a>
       
       
     </footer>
@@ -703,6 +880,14 @@
       <ul>
         
           <li>
+            <a href="/2019/08/06/用户管理/">用户管理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/06/磁盘管理/">磁盘管理</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/05/Shell/">Shell</a>
           </li>
         
@@ -712,14 +897,6 @@
         
           <li>
             <a href="/2019/08/05/正则表达式/">正则表达式</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/04/Python/">Python</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/02/Linux/">Linux基本命令</a>
           </li>
         
       </ul>
