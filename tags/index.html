@@ -55,19 +55,15 @@
   };
 </script>
 
-  <meta name="description" content="mountmount 查询系统中已挂载的设备 mount  -a          依据配置文件  /etc/fstab 的内容，自动挂载 mount [-t] [-o]  设备文件名  挂载点 -t 文件系统：加入文件系统类型来指定挂载的类型，可以是 ext3, ext4, iso9660 等文件系统  -o 特殊选项：可以指定挂载的额外选项挂载光盘mkdir  /mnt/cdrom/">
-<meta name="keywords" content="Linux">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Linux挂载命令">
-<meta property="og:url" content="http://AlwaysOnline233.com/2019/08/05/Linux挂载命令/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="http://AlwaysOnline233.com/tags/index.html">
 <meta property="og:site_name" content="AlwaysOnlineの部落格">
-<meta property="og:description" content="mountmount 查询系统中已挂载的设备 mount  -a          依据配置文件  /etc/fstab 的内容，自动挂载 mount [-t] [-o]  设备文件名  挂载点 -t 文件系统：加入文件系统类型来指定挂载的类型，可以是 ext3, ext4, iso9660 等文件系统  -o 特殊选项：可以指定挂载的额外选项挂载光盘mkdir  /mnt/cdrom/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T07:19:17.605Z">
+<meta property="og:updated_time" content="2019-08-07T10:45:13.684Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux挂载命令">
-<meta name="twitter:description" content="mountmount 查询系统中已挂载的设备 mount  -a          依据配置文件  /etc/fstab 的内容，自动挂载 mount [-t] [-o]  设备文件名  挂载点 -t 文件系统：加入文件系统类型来指定挂载的类型，可以是 ext3, ext4, iso9660 等文件系统  -o 特殊选项：可以指定挂载的额外选项挂载光盘mkdir  /mnt/cdrom/">
-  <link rel="canonical" href="http://AlwaysOnline233.com/2019/08/05/Linux挂载命令/">
+<meta name="twitter:title" content="tags">
+  <link rel="canonical" href="http://AlwaysOnline233.com/tags/">
 
 
 <script id="page-configurations">
@@ -75,13 +71,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
+    isPost: false,
+    isPage: true,
     isArchive: false
   };
 </script>
 
-  <title>Linux挂载命令 | AlwaysOnlineの部落格</title>
+  <title>tags | AlwaysOnlineの部落格</title>
   
 
 
@@ -242,121 +238,94 @@
         <div class="content-wrap">
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
           <div id="content" class="content page-post-detail">
             
 
   <div id="posts" class="posts-expand">
     
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://AlwaysOnline233.com/2019/08/05/Linux挂载命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlwaysOnline233">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AlwaysOnlineの部落格">
-    </span>
+    
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-          <h1 class="post-title" itemprop="name headline">Linux挂载命令
+<h1 class="post-title" itemprop="name headline">tags
 
-            
-          </h1>
-        
+</h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+<div class="post-meta">
+  
 
-              
-                
-              
+</div>
 
-              <time title="创建时间：2019-08-05 15:01:05 / 修改时间：15:19:17" itemprop="dateCreated datePublished" datetime="2019-08-05T15:01:05+08:00">2019-08-05</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
-        <h3 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h3><p>mount 查询系统中已挂载的设备</p>
-<p>mount  -a          依据配置文件  /etc/fstab 的内容，自动挂载</p>
-<p>mount [-t] [-o]  设备文件名  挂载点</p>
-<pre><code>-t 文件系统：加入文件系统类型来指定挂载的类型，可以是 ext3, ext4, iso9660 等文件系统
-
--o 特殊选项：可以指定挂载的额外选项</code></pre><h3 id="挂载光盘"><a href="#挂载光盘" class="headerlink" title="挂载光盘"></a>挂载光盘</h3><p>mkdir  /mnt/cdrom/                                                   # 建立挂载点</p>
-<p>mount -t  iso9660  /dev/cdrom/mnt/cdrom/        #挂载光盘</p>
-<p>mount  /dev/sr0/mnt/cdrm/                                    # 挂载光盘</p>
-<h3 id="挂载U盘"><a href="#挂载U盘" class="headerlink" title="挂载U盘"></a>挂载U盘</h3><p>fdisk  -l                                                                       # 查看U盘设备文件名</p>
-<p>mount -t  vfat  /dev/sdb1/mnt/usb/</p>
-<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>umount  设备文件名或挂载点</p>
-<p>umount  /mnt/cdrom</p>
-<h3 id="查看登录用户信息"><a href="#查看登录用户信息" class="headerlink" title="查看登录用户信息"></a>查看登录用户信息</h3><p>w  用户名</p>
-<p>who  用户名</p>
-<p>last                         # 查询当前和过去登录用户的信息</p>
-<p>lastlog                   # 查看所有用户最后一次登录时间</p>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          
+      
+      
+      <div class="post-body">
         
-        <div class="post-tags">
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-        </div>
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-              <a href="/2019/08/05/正则表达式/" rel="next" title="正则表达式">
-                <i class="fa fa-chevron-left"></i> 正则表达式
-              </a>
-            
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+              
+              
+                
+                  
+                
+              
+                
+                  
+                
+              
+                
+                  
+                
+              
+              目前共计 3 个标签
+            </div>
+            <div class="tag-cloud-tags">
+              
+                <a href="/tags/Linux/" style="font-size: 30px; color: #111">Linux</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/python/" style="font-size: 21px; color: #6f6f6f">python</a>
+              
+            </div>
           </div>
+        
+      </div>
+      
+      
+      
+    </div>
+    
 
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-              <a href="/2019/08/05/Shell/" rel="prev" title="Shell">
-                Shell <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
+    
+    
+    
   </div>
 
 
@@ -377,17 +346,8 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -434,23 +394,6 @@
 
         </div>
       </div>
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mount"><span class="nav-number">1.</span> <span class="nav-text">mount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载光盘"><span class="nav-number">2.</span> <span class="nav-text">挂载光盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载U盘"><span class="nav-number">3.</span> <span class="nav-text">挂载U盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载"><span class="nav-number">4.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看登录用户信息"><span class="nav-number">5.</span> <span class="nav-text">查看登录用户信息</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
     </div>
   </aside>
@@ -562,9 +505,10 @@
 
 
   
-  <script src="/js/scrollspy.js?v=7.3.0"></script>
+    <script src="/js/scrollspy.js?v=7.3.0"></script>
 <script src="/js/post-details.js?v=7.3.0"></script>
 
+  
 
 </body>
 </html>
