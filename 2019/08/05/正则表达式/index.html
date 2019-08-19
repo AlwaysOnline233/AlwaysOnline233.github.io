@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="AlwaysOnlineの部落格">
 <meta property="og:description" content="re模块python自1.5以后增加了re模块，提供了正则表达式模式 re模块使python语言拥有了全部的正则表达式功能 re.match函数 原型：match(pattern, string, flags=0)   参数：  pattern 匹配的正则表达式 string 要匹配额字符串 flags 标志位，用于控制正则表达式的匹配方式，值如下：  re.I 忽略大小写 re.L 做本地识别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-14T06:49:55.594Z">
+<meta property="og:updated_time" content="2019-08-17T09:43:56.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="re模块python自1.5以后增加了re模块，提供了正则表达式模式 re模块使python语言拥有了全部的正则表达式功能 re.match函数 原型：match(pattern, string, flags=0)   参数：  pattern 匹配的正则表达式 string 要匹配额字符串 flags 标志位，用于控制正则表达式的匹配方式，值如下：  re.I 忽略大小写 re.L 做本地识别">
@@ -284,7 +284,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-14 14:49:55" itemprop="dateModified" datetime="2019-08-14T14:49:55+08:00">2019-08-14</time>
+                <time title="修改时间：2019-08-17 17:43:56" itemprop="dateModified" datetime="2019-08-17T17:43:56+08:00">2019-08-17</time>
               </span>
             
           
@@ -503,11 +503,15 @@
 <p>pattern 要编译正则表达式</p>
 <p>flags 标志位，用于控制正则表达式的匹配方式</p>
 </blockquote>
+<p>功能：将正则字符串编译成正则表达式对象</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">pat = <span class="string">r"^1[3578]\d&#123;9&#125;$"</span></span><br><span class="line">print(re.match(pat, <span class="string">"13912345678"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译成正则对象</span></span><br><span class="line">re_phone = re.compile(pat)</span><br><span class="line">print(re_phone.match(<span class="string">"13912345678"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果如下：</span></span><br><span class="line">&lt;re.Match object; span=(<span class="number">0</span>, <span class="number">11</span>), match=<span class="string">'13912345678'</span>&gt;</span><br><span class="line">&lt;re.Match object; span=(<span class="number">0</span>, <span class="number">11</span>), match=<span class="string">'13912345678'</span>&gt;</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">"Hello 1234567 World_This is a Regex Demo"</span></span><br><span class="line">pattern = re.compile(<span class="string">'Hello.*Demo'</span>, re.S)</span><br><span class="line">result = re.match(pattern, content)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
 <h3 id="举个栗子——判断QQ号"><a href="#举个栗子——判断QQ号" class="headerlink" title="举个栗子——判断QQ号"></a>举个栗子——判断QQ号</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># QQ    5-10位</span></span><br><span class="line">re_qq = re.compile(<span class="string">r"^[1-9]\d&#123;4,9&#125;$"</span>)</span><br><span class="line">print(re_qq.search(<span class="string">"123456789"</span>))</span><br><span class="line">print(re_qq.search(<span class="string">"1234"</span>))</span><br><span class="line">print(re_qq.search(<span class="string">"123456789123"</span>))</span><br><span class="line">print(re_qq.search(<span class="string">"12345678aa"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果如下：</span></span><br><span class="line">&lt;re.Match object; span=(<span class="number">0</span>, <span class="number">9</span>), match=<span class="string">'123456789'</span>&gt;</span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="literal">None</span></span><br></pre></td></tr></table></figure>
 
+<p>总结：尽量使用泛匹配，使用括号得到匹配目标，尽量使用非贪婪模式，有换行符就用re.S</p>
 
     </div>
 
@@ -593,7 +597,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -661,7 +665,7 @@
         
           
         
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
